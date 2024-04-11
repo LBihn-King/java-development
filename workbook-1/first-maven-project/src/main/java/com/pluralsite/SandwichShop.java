@@ -13,7 +13,6 @@ public class SandwichShop {
         scanner.nextLine();
         return num;
     }
-        public static void cost
 
     public static void main(String[] args) {
         System.out.println("Select size\n   1) Regular: base price $5.45\n   2) Large: base price $8.95");
@@ -23,9 +22,9 @@ public class SandwichShop {
 
         if (size == 1) {
             if (age <= 17) {
-                System.out.printf("$%.2f * %.2f = $%.2f", regPrice, regPrice * studentDiscount);
+                System.out.printf("$%.2f - student discount = $%.2f", regPrice, regPrice * studentDiscount);
             } else if (age >= 65) {
-                System.out.printf("$%.2f * %.2f = $%.2f", regPrice, regPrice * seniorDiscount);
+                System.out.printf("$%.2f - senior discount = $%.2f", regPrice, regPrice * seniorDiscount);
             } else {
                 System.out.println("$" + regPrice);
             }
