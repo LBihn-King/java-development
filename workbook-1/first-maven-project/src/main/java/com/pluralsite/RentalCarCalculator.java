@@ -21,15 +21,15 @@ public class RentalCarCalculator {
         System.out.println("Would you like roadside assistance? Y/N: ");
         String roadAsstSelect = scanner.nextLine();
 
-        if (tollTagSelect.equals("Y")) {
+        if (tollTagSelect.equalsIgnoreCase("Y")) {
             tollTagCharge = 3.95f;
         }
 
-        if (gpsSelect.equals("Y")) {
+        if (gpsSelect.equalsIgnoreCase("Y")) {
             gpsCharge = 2.95f;
         }
 
-        if (roadAsstSelect.equals ("Y")) {
+        if (roadAsstSelect.equalsIgnoreCase("Y")) {
             roadAsstCharge = 3.95f;
         }
 
