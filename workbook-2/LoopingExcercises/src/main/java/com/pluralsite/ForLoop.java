@@ -9,6 +9,7 @@ public class ForLoop {
             Thread.sleep(1000);
             if (count == 1) {
                 System.out.println("Launch");
+                break;
             }
 
         }
