@@ -20,7 +20,7 @@ public class CellPhoneApplication {
         phone.setOwner(scanner.nextLine()); //sets value of CellPhone object [phone]'s 'owner' variable to the next String entered
     }
 
-    public static void printCellPhone(CellPhone phone) { //prints values of Cellphone object
+    public static void display(CellPhone phone) { //prints values of Cellphone object
         System.out.println(phone.getSerialNumber());
         System.out.println(phone.getModel());
         System.out.println(phone.getCarrier());
@@ -33,11 +33,11 @@ public class CellPhoneApplication {
         CellPhone phone2 = new CellPhone();
 
         createCellPhone(phone1); //sets phone1's variable values
-        printCellPhone(phone1); //prints phone1's variable values
+        display(phone1); //prints phone1's variable values
         phone1.dial("855-555-2222"); //has phone1 call dial function with manually inputted phone number
 
         createCellPhone(phone2);
-        printCellPhone(phone2);
+        display(phone2);
         phone2.dial("123-456-7890");
 
         phone1.dial(phone2.getPhoneNumber()); //has phone1 call dial with phone2's phone number value

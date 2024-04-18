@@ -8,7 +8,16 @@ public class CellPhone {
     private String phoneNumber;
     private String owner;
 
-    public CellPhone() { //creates a new type of object and determines what kind of values it can have
+    //parameter constructor
+    public CellPhone(int serialNumber, String model, String carrier, String phoneNumber, String owner ) {
+        this.serialNumber = 0;
+        this.model = " ";
+        this.carrier = " ";
+        this.phoneNumber = " ";
+        this.owner = " ";
+    }
+    //parameterless constructor
+    public CellPhone() { //
         this.serialNumber = serialNumber;
         this.model = model;
         this.carrier = carrier;
@@ -50,6 +59,9 @@ public class CellPhone {
         this.owner = owner;
     }
 
+    public void dial (CellPhone phone) {
+        System.out.println(getOwner() + "'s phone is calling "+ phone.getPhoneNumber());
+    }
     public void dial (String dialing) {
         System.out.println(getOwner() + "'s phone is calling "+ dialing);
     }
