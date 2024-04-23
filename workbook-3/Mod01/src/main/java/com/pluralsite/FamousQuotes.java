@@ -9,7 +9,7 @@ public class FamousQuotes {
     }
 
     public static void home() {
-        System.out.println("1) Choose quote\n2) Random quote\n3)Exit");
+        System.out.println("1) Choose quote\n2) Random quote\n3) Exit");
         int choice = scanner.nextInt();
         if (choice == 1) {
             quoteSelect();
@@ -35,7 +35,7 @@ public class FamousQuotes {
     }
 
     public static void anotherQuote() {
-        System.out.println("Would you like another?\n1) Yes\2) No");
+        System.out.println("Would you like another?\n1) Yes\n21) No");
         int choice = scanner.nextInt();
         if (choice == 1) {
             home();
