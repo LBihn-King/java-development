@@ -1,5 +1,8 @@
 package com.pluralsite;
-import java.io.*;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class PayrollCalculator {
     private static String input;
@@ -9,8 +12,7 @@ public class PayrollCalculator {
 
     public static void readFile() {
         try {
-            FileReader fileReader = new FileReader("employees.csv");
-            BufferedReader bufReader = new BufferedReader(fileReader);
+            BufferedReader bufReader = new BufferedReader(new FileReader("employees.csv"));
             boolean skipHeader = false;
             while ((input = bufReader.readLine()) != null) {
                 if (!skipHeader) {
@@ -33,6 +35,5 @@ public class PayrollCalculator {
         double rate = Double.parseDouble(section[3]);
         Employee employee = new Employee(id, name, hours, rate);
         System.out.printf("%d, %s, earns $%.02f\n", Employee.getEmployeeID(), Employee.getName(), employee.getGrossPay());
-
     }
 }
