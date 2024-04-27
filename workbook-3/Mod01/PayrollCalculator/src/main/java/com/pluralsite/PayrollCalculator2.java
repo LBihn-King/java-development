@@ -4,7 +4,6 @@ import java.util.Scanner;
 import java.io.*;
 
 public class PayrollCalculator2 {
-    static Scanner scanner = new Scanner(System.in);
     static String input;
     static String output;
     static String inputFile;
@@ -47,6 +46,7 @@ public class PayrollCalculator2 {
 
 
     public static void getFileNames() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the name of the file employee file to process: ");
         inputFile = scanner.nextLine();
         System.out.println("Enter the name of the payroll file to create: ");
