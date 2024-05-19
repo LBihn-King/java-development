@@ -17,10 +17,11 @@ public class PayrollCalculator2 {
         try {
             BufferedReader bufReader = new BufferedReader(new FileReader(inputFile));
             BufferedWriter bufWriter = new BufferedWriter(new FileWriter(outputFile));
-            boolean skipHeader = false;
+            boolean hasHeader = false;
             while ((input = bufReader.readLine()) != null) {
-                if (!skipHeader) {
-                    skipHeader = true;
+                if (!hasHeader) {
+                    bufWriter.write("[id],[name] earns [gross pay]\n");
+                    hasHeader = true;
                     continue;
                 }
                 parseFile();
@@ -41,13 +42,13 @@ public class PayrollCalculator2 {
         double hoursWorked = Double.parseDouble(section[2]);
         double payRate = Double.parseDouble(section[3]);
         Employee employee = new Employee(id, name, hoursWorked, payRate);
-        output = String.format("%d, %s, earns $%.02f\n", id, name, employee.getGrossPay());
+        output = String.format("%d, %s earns $%.02f\n", id, name, employee.getGrossPay());
     }
 
 
     public static void getFileNames() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the name of the file employee file to process: ");
+        System.out.println("Enter the name of the employee file to process: ");
         inputFile = scanner.nextLine();
         System.out.println("Enter the name of the payroll file to create: ");
         outputFile = scanner.nextLine();
